@@ -1,8 +1,19 @@
 import { useState } from "react";
 
 function ToDoList() {
-	const [taskHeader, setTaskHeader] = useState("");
-	const [taskDesc, setTaskDesc] = useState("");
+	const [inputs, setInput] = useState({
+		taskHeader: "",
+		taskDesc: "",
+	});
+
+	const handleInputChange = (e) => {
+		const { value, name } = e.target;
+
+		setInput({
+			...inputs,
+			[name]: value,
+		});
+	};
 
 	return (
 		<div className="ToDoList">
@@ -10,12 +21,16 @@ function ToDoList() {
 				<input
 					type="text"
 					className="ToDoList__inputsBox__headingInput"
-					value={taskHeader}
+					name="taskHeader"
+					value={inputs.taskHeader}
+					onChange={handleInputChange}
 				/>
 				<textarea
 					type="text"
 					className="ToDoList__inputsBox__descriptionInput"
-					value={taskDesc}
+					name="taskDesc"
+					value={inputs.taskDesc}
+					onChange={handleInputChange}
 				/>
 				<button>Add</button>
 			</div>
