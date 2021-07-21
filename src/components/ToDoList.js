@@ -16,9 +16,26 @@ function ToDoList() {
 		});
 	};
 
+	const handleTaskSubmit = (e) => {
+		e.preventDefault();
+
+		const { taskHeader, taskDesc } = inputs;
+
+		if (taskHeader.length > 2 && taskDesc.length > 10) {
+			setInput({
+				taskHeader: "",
+				taskDesc: "",
+			});
+		}
+	};
+
 	return (
 		<div className="ToDoList">
-			<InputsBox inputs={inputs} change={handleInputChange} />
+			<InputsBox
+				inputs={inputs}
+				change={handleInputChange}
+				click={handleTaskSubmit}
+			/>
 		</div>
 	);
 }

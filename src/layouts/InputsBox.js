@@ -1,4 +1,4 @@
-const InputsBox = ({ inputs, change }) => {
+const InputsBox = ({ inputs, change, click }) => {
 	return (
 		<div className="ToDoList__inputsBox">
 			<input
@@ -15,7 +15,7 @@ const InputsBox = ({ inputs, change }) => {
 				value={inputs.taskDesc}
 				onChange={change}
 			/>
-			<button>Add</button>
+			<button onClick={click}>Add</button>
 		</div>
 	);
 };
