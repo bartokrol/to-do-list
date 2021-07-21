@@ -7,6 +7,11 @@ function ToDoList() {
 		taskDesc: "",
 	});
 
+	const [errors, setError] = useState({
+		taskHeaderError: false,
+		taskDescError: false,
+	});
+
 	const handleInputChange = (e) => {
 		const { value, name } = e.target;
 
@@ -21,11 +26,21 @@ function ToDoList() {
 
 		const { taskHeader, taskDesc } = inputs;
 
-		if (taskHeader.length > 2 && taskDesc.length > 10) {
-			setInput({
-				taskHeader: "",
-				taskDesc: "",
-			});
+		switch (true) {
+			case taskHeader.length < 3:
+				setError({ ...errors, taskHeaderError: true });
+				break;
+			case taskDesc.length < 11:
+				setError({ ...errors, taskDescError: true });
+				break;
+			case taskHeader.length > 2 && taskDesc.length > 10:
+				setInput({
+					taskHeader: "",
+					taskDesc: "",
+				});
+				break;
+			default:
+				return;
 		}
 	};
 
@@ -35,6 +50,7 @@ function ToDoList() {
 				inputs={inputs}
 				change={handleInputChange}
 				click={handleTaskSubmit}
+				errors={errors}
 			/>
 		</div>
 	);
