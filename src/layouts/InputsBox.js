@@ -1,4 +1,5 @@
 import TaskTitle from "./TaskTitle";
+import TaskDesc from "./TaskDesc";
 
 const InputsBox = ({ inputs, change, click, errors }) => {
 	return (
@@ -8,18 +9,11 @@ const InputsBox = ({ inputs, change, click, errors }) => {
 				change={change}
 				taskHeaderError={errors.taskHeaderError}
 			/>
-			<label htmlFor="taskDesc">Task description:</label>
-			<textarea
-				id="taskDesc"
-				type="text"
-				className="ToDoList__inputsBox__taskDesc"
-				name="taskDesc"
-				value={inputs.taskDesc}
-				onChange={change}
+			<TaskDesc
+				taskDesc={inputs.taskDesc}
+				change={change}
+				taskDescError={errors.taskDescError}
 			/>
-			<span className="ToDoList__inputsBox__taskDescErr">
-				{errors.taskDescError ? "Desc error" : null}
-			</span>
 			<button onClick={click}>Add</button>
 		</div>
 	);
