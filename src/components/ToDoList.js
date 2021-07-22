@@ -27,6 +27,12 @@ function ToDoList() {
 		const { taskHeader, taskDesc } = inputs;
 
 		switch (true) {
+			case taskHeader.length < 3 && taskDesc.length < 11:
+				setError({
+					taskHeaderError: true,
+					taskDescError: true,
+				});
+				break;
 			case taskHeader.length < 3:
 				setError({ ...errors, taskHeaderError: true });
 				break;
