@@ -1,19 +1,13 @@
+import TaskTitle from "./TaskTitle";
+
 const InputsBox = ({ inputs, change, click, errors }) => {
-	// console.log(errors);
 	return (
 		<div className="ToDoList__inputsBox">
-			<label htmlFor="taskTitle">Task title:</label>
-			<input
-				id="taskTitle"
-				type="text"
-				className="ToDoList__inputsBox__taskTitle"
-				name="taskHeader"
-				value={inputs.taskHeader}
-				onChange={change}
+			<TaskTitle
+				taskHeader={inputs.taskHeader}
+				change={change}
+				taskHeaderError={errors.taskHeaderError}
 			/>
-			<span className="ToDoList__inputsBox__taskTitleErr">
-				{errors.taskHeaderError ? "Title error" : null}
-			</span>
 			<label htmlFor="taskDesc">Task description:</label>
 			<textarea
 				id="taskDesc"
