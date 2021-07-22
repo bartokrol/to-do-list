@@ -1,5 +1,6 @@
 import { useState } from "react";
 import InputsBox from "../layouts/InputsBox";
+import Tasks from "../layouts/Tasks";
 
 function ToDoList() {
 	const [inputs, setInput] = useState({
@@ -29,6 +30,7 @@ function ToDoList() {
 		const { taskHeader, taskDesc } = inputs;
 		let { taskHeaderError, taskDescError } = errors;
 		const taskArr = tasks;
+		const taskNumber = tasks.length;
 
 		if (taskHeader.length < 3) {
 			taskHeaderError = true;
@@ -43,7 +45,7 @@ function ToDoList() {
 		}
 
 		if (taskHeader.length > 2 && taskDesc.length > 10) {
-			taskArr.push({ taskHeader, taskDesc });
+			taskArr.push({ taskHeader, taskDesc, taskNumber });
 			setTasks(taskArr);
 			setInput({
 				taskHeader: "",
@@ -55,8 +57,6 @@ function ToDoList() {
 			taskHeaderError,
 			taskDescError,
 		});
-
-		console.log(tasks);
 	};
 
 	return (
@@ -67,6 +67,7 @@ function ToDoList() {
 				click={handleTaskSubmit}
 				errors={errors}
 			/>
+			<Tasks tasks={tasks} />
 		</div>
 	);
 }
