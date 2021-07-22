@@ -12,6 +12,8 @@ function ToDoList() {
 		taskDescError: false,
 	});
 
+	const [tasks, setTasks] = useState([]);
+
 	const handleInputChange = (e) => {
 		const { value, name } = e.target;
 
@@ -26,6 +28,7 @@ function ToDoList() {
 
 		const { taskHeader, taskDesc } = inputs;
 		let { taskHeaderError, taskDescError } = errors;
+		const taskArr = tasks;
 
 		if (taskHeader.length < 3) {
 			taskHeaderError = true;
@@ -40,6 +43,8 @@ function ToDoList() {
 		}
 
 		if (taskHeader.length > 2 && taskDesc.length > 10) {
+			taskArr.push({ taskHeader, taskDesc });
+			setTasks(taskArr);
 			setInput({
 				taskHeader: "",
 				taskDesc: "",
@@ -50,6 +55,8 @@ function ToDoList() {
 			taskHeaderError,
 			taskDescError,
 		});
+
+		console.log(tasks);
 	};
 
 	return (
