@@ -1,4 +1,5 @@
 const InputsBox = ({ inputs, change, click, errors }) => {
+	// console.log(errors);
 	return (
 		<div className="ToDoList__inputsBox">
 			<label htmlFor="taskTitle">Task title:</label>

@@ -25,29 +25,31 @@ function ToDoList() {
 		e.preventDefault();
 
 		const { taskHeader, taskDesc } = inputs;
+		let { taskHeaderError, taskDescError } = errors;
 
-		switch (true) {
-			case taskHeader.length < 3 && taskDesc.length < 11:
-				setError({
-					taskHeaderError: true,
-					taskDescError: true,
-				});
-				break;
-			case taskHeader.length < 3:
-				setError({ ...errors, taskHeaderError: true });
-				break;
-			case taskDesc.length < 11:
-				setError({ ...errors, taskDescError: true });
-				break;
-			case taskHeader.length > 2 && taskDesc.length > 10:
-				setInput({
-					taskHeader: "",
-					taskDesc: "",
-				});
-				break;
-			default:
-				return;
+		if (taskHeader.length < 3) {
+			taskHeaderError = true;
+		} else {
+			taskHeaderError = false;
 		}
+
+		if (taskDesc.length < 11) {
+			taskDescError = true;
+		} else {
+			taskDescError = false;
+		}
+
+		if (taskHeader.length > 2 && taskDesc.length > 10) {
+			setInput({
+				taskHeader: "",
+				taskDesc: "",
+			});
+		}
+
+		setError({
+			taskHeaderError,
+			taskDescError,
+		});
 	};
 
 	return (
