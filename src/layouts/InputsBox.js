@@ -3,7 +3,7 @@ import TaskDesc from "./TaskDesc";
 
 const InputsBox = ({ inputs, change, click, errors }) => {
 	return (
-		<div className="ToDoList__inputsBox">
+		<div className="toDoList__inputsBox">
 			<TaskTitle
 				taskHeader={inputs.taskHeader}
 				change={change}

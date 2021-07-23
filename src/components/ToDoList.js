@@ -1,6 +1,8 @@
 import { useState } from "react";
 import InputsBox from "../layouts/InputsBox";
 import Tasks from "../layouts/Tasks";
+import "../styles/styles.scss";
+import "../styles/toDoList.scss";
 
 function ToDoList() {
 	const [inputs, setInput] = useState({
@@ -60,7 +62,7 @@ function ToDoList() {
 	};
 
 	return (
-		<div className="ToDoList">
+		<div className="toDoList">
 			<InputsBox
 				inputs={inputs}
 				change={handleInputChange}

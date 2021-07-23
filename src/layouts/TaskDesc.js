@@ -1,4 +1,4 @@
-const TaskDesc = ({taskDesc, change, taskDescError}) => {
+const TaskDesc = ({ taskDesc, change, taskDescError }) => {
 	return (
 		<>
 			<label htmlFor="taskDesc">Task description:</label>
@@ -10,7 +10,7 @@ const TaskDesc = ({taskDesc, change, taskDescError}) => {
 				value={taskDesc}
 				onChange={change}
 			/>
-			<span className="ToDoList__inputsBox__taskDescErr">
+			<span className="ToDoList__inputsBox__taskErr">
 				{taskDescError ? "Desc error" : null}
 			</span>
 		</>
