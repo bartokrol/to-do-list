@@ -1,7 +1,7 @@
 const TaskTitle = ({ taskHeader, change, taskHeaderError }) => {
 	return (
 		<div className="toDoList__inputsBox__taskTitle">
-			<label htmlFor="taskTitle">Task title:</label>
+			<label className="toDoList__inputsBox__taskTitle__label" htmlFor="taskTitle">Task title:</label>
 			<input
 				id="taskTitle"
 				type="text"
