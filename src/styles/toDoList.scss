@@ -11,19 +11,32 @@
 	@include inputsBox;
 	&__tasks {
 		background-color: brown;
-		text-align: center;
+
 		&__title {
 			font-size: 40px;
+			text-align: center;
 		}
 		&__task {
+			text-align: start;
 			display: flex;
 			flex-direction: column;
 			justify-content: space-between;
+			position: relative;
 			padding: 5px;
 			word-wrap: break-word;
 			background-color: burlywood;
+
 			&__buttons {
 				align-self: flex-end;
+			}
+			&__openCloseBtn {
+				position: absolute;
+				top: 5px;
+				right: 5px;
+			}
+
+			&.closed {
+				visibility: hidden;
 			}
 		}
 	}

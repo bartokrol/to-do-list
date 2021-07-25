@@ -129,14 +129,15 @@
 
 .toDoList__tasks {
   background-color: brown;
-  text-align: center;
 }
 
 .toDoList__tasks__title {
   font-size: 40px;
+  text-align: center;
 }
 
 .toDoList__tasks__task {
+  text-align: start;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -147,6 +148,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  position: relative;
   padding: 5px;
   word-wrap: break-word;
   background-color: burlywood;
@@ -155,5 +157,15 @@
 .toDoList__tasks__task__buttons {
   -ms-flex-item-align: end;
       align-self: flex-end;
+}
+
+.toDoList__tasks__task__openCloseBtn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.toDoList__tasks__task.closed {
+  visibility: hidden;
 }
 /*# sourceMappingURL=toDoList.css.map */

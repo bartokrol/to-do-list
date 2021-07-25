@@ -21,6 +21,7 @@ function ToDoList() {
 			taskDesc:
 				"KrólKrólKrólKrólKrólKrólKrólKrólKrólKrólKrólKrólKrólKrólKrólKról",
 			taskNumber: 0,
+			taskVisible: true,
 		},
 	]);
 
@@ -40,6 +41,7 @@ function ToDoList() {
 		let { taskHeaderError, taskDescError } = errors;
 		const taskArr = tasks;
 		const taskNumber = tasks.length;
+		const taskVisible = true;
 
 		if (taskHeader.length < 3) {
 			taskHeaderError = true;
@@ -54,7 +56,7 @@ function ToDoList() {
 		}
 
 		if (taskHeader.length > 2 && taskDesc.length > 10) {
-			taskArr.push({ taskHeader, taskDesc, taskNumber });
+			taskArr.push({ taskHeader, taskDesc, taskNumber, taskVisible });
 			setTasks(taskArr);
 			setInput({
 				taskHeader: "",
@@ -68,6 +70,14 @@ function ToDoList() {
 		});
 	};
 
+	const handleTaskOpenCloseButton = (e) => {
+		e.preventDefault();
+		const target = e.target.id;
+		const task = tasks[target];
+
+		console.log(task);
+	};
+
 	return (
 		<div className={`${toDolistClassName}`}>
 			<InputsBox
@@ -77,7 +87,11 @@ function ToDoList() {
 				errors={errors}
 				toDolistClassName={`${toDolistClassName}`}
 			/>
-			<Tasks tasks={tasks} toDolistClassName={`${toDolistClassName}`} />
+			<Tasks
+				tasks={tasks}
+				toDolistClassName={`${toDolistClassName}`}
+				click={handleTaskOpenCloseButton}
+			/>
 		</div>
 	);
 }
