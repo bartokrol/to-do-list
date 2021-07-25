@@ -1,7 +1,6 @@
 import { useState } from "react";
 import InputsBox from "../layouts/InputsBox";
 import Tasks from "../layouts/Tasks";
-import "../styles/styles.scss";
 import "../styles/toDoList.scss";
 
 function ToDoList() {
@@ -15,7 +14,9 @@ function ToDoList() {
 		taskDescError: false,
 	});
 
-	const [tasks, setTasks] = useState([]);
+	const [tasks, setTasks] = useState([
+		{ taskHeader: "Bartosz", taskDesc: "KrólKrólKrólKról", taskNumber: 0 },
+	]);
 
 	const handleInputChange = (e) => {
 		const { value, name } = e.target;

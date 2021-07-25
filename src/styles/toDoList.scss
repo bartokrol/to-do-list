@@ -1,27 +1,12 @@
-@import "variables";
+// @import "variables";
+@import "inputsBox";
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
 
 .toDoList {
-	&__inputsBox {
-		display: flex;
-		align-items: center;
-		flex-direction: column;
-		background-color: beige;
-		padding: 10px;
-
-		&__taskTitle {
-			@include inputBox;
-		}
-		&__taskDesc {
-			@include inputBox;
-			&__input {
-				min-height: 50px;
-			}
-		}
-		&__addBtn {
-			min-width: 100px;
-			min-height: 25px;
-			font-size: 18px;
-			text-transform: uppercase;
-		}
-	}
+	@include inputsBox;
 }

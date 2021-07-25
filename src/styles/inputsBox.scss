@@ -1,0 +1,27 @@
+@import "inputBox";
+
+@mixin inputsBox {
+	&__inputsBox {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		background-color: beige;
+		padding: 10px;
+
+		&__taskTitle {
+			@include inputBox;
+		}
+		&__taskDesc {
+			@include inputBox;
+			&__input {
+				min-height: 50px;
+			}
+		}
+		&__addBtn {
+			min-width: 100px;
+			min-height: 25px;
+			font-size: 18px;
+			text-transform: uppercase;
+		}
+	}
+}
