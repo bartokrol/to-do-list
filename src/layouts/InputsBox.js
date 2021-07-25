@@ -1,8 +1,8 @@
 import TaskTitle from "./TaskTitle";
 import TaskDesc from "./TaskDesc";
 
-const InputsBox = ({ inputs, change, click, errors, listClassName }) => {
-	const inputsBoxClassName = `${listClassName}__inputsBox`;
+const InputsBox = ({ inputs, change, click, errors, toDolistClassName }) => {
+	const inputsBoxClassName = `${toDolistClassName}__inputsBox`;
 	return (
 		<div className={inputsBoxClassName}>
 			<TaskTitle

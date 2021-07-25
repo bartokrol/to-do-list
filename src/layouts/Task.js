@@ -1,10 +1,12 @@
-const Task = ({ header, desc }) => {
-	const basicClass = `toDoList__tasks__task`;
+const Task = ({ header, desc, taskClassName }) => {
+	const basicClass = `${taskClassName}__task`;
 
 	return (
 		<div className={basicClass}>
-			<h1 className={`${basicClass}__header`}>{header}</h1>
-			<p className={`${basicClass}__desc`}>{desc}</p>
+			<div className={`${basicClass}__taskText`}>
+				<h1 className={`${basicClass}__taskText__header`}>{header}</h1>
+				<p className={`${basicClass}__taskText__desc`}>{desc}</p>
+			</div>
 			<div className={`${basicClass}__buttons`}>
 				<button className={`${basicClass}__buttons__confirm`}>
 					Confirm

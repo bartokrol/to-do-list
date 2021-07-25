@@ -9,4 +9,22 @@
 
 .toDoList {
 	@include inputsBox;
+	&__tasks {
+		background-color: brown;
+		text-align: center;
+		&__title {
+			font-size: 40px;
+		}
+		&__task {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			padding: 5px;
+			word-wrap: break-word;
+			background-color: burlywood;
+			&__buttons {
+				align-self: flex-end;
+			}
+		}
+	}
 }

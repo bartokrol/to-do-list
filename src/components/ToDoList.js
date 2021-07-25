@@ -4,7 +4,7 @@ import Tasks from "../layouts/Tasks";
 import "../styles/toDoList.scss";
 
 function ToDoList() {
-	const listClassName = "toDoList";
+	const toDolistClassName = "toDoList";
 	const [inputs, setInput] = useState({
 		taskHeader: "",
 		taskDesc: "",
@@ -16,7 +16,12 @@ function ToDoList() {
 	});
 
 	const [tasks, setTasks] = useState([
-		{ taskHeader: "Bartosz", taskDesc: "KrólKrólKrólKról", taskNumber: 0 },
+		{
+			taskHeader: "Bartosz",
+			taskDesc:
+				"KrólKrólKrólKrólKrólKrólKrólKrólKrólKrólKrólKrólKrólKrólKrólKról",
+			taskNumber: 0,
+		},
 	]);
 
 	const handleInputChange = (e) => {
@@ -64,15 +69,15 @@ function ToDoList() {
 	};
 
 	return (
-		<div className={`${listClassName}`}>
+		<div className={`${toDolistClassName}`}>
 			<InputsBox
 				inputs={inputs}
 				change={handleInputChange}
 				click={handleTaskSubmit}
 				errors={errors}
-				listClassName={`${listClassName}`}
+				toDolistClassName={`${toDolistClassName}`}
 			/>
-			<Tasks tasks={tasks} />
+			<Tasks tasks={tasks} toDolistClassName={`${toDolistClassName}`} />
 		</div>
 	);
 }
