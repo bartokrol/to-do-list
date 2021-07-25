@@ -1,0 +1,16 @@
+@mixin inputBox {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(1, 1fr);
+	justify-content: center;
+	&__label {
+		grid-column: 1;
+	}
+	&__input {
+		grid-column: 2/4;
+	}
+	&__taskErr {
+		grid-column: 1/4;
+		justify-self: center;
+	}
+}

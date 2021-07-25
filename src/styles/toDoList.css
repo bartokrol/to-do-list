@@ -18,8 +18,8 @@
   display: grid;
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
-  -ms-grid-rows: (1fr)[2];
-      grid-template-rows: repeat(2, 1fr);
+  -ms-grid-rows: (1fr)[1];
+      grid-template-rows: repeat(1, 1fr);
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -28,29 +28,50 @@
 .toDoList__inputsBox__taskTitle__label {
   -ms-grid-column: 1;
   grid-column: 1;
-  -ms-grid-row: 1;
-  grid-row: 1;
 }
 
 .toDoList__inputsBox__taskTitle__input {
   -ms-grid-column: 2;
   -ms-grid-column-span: 2;
   grid-column: 2/4;
-  -ms-grid-row: 1;
-  grid-row: 1;
 }
 
 .toDoList__inputsBox__taskTitle__taskErr {
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-column: 1/4;
-  -ms-grid-row: 2;
-  grid-row: 2;
   -ms-grid-column-align: center;
       justify-self: center;
 }
 
 .toDoList__inputsBox__taskDesc {
-  display: block;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-rows: (1fr)[1];
+      grid-template-rows: repeat(1, 1fr);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.toDoList__inputsBox__taskDesc__label {
+  -ms-grid-column: 1;
+  grid-column: 1;
+}
+
+.toDoList__inputsBox__taskDesc__input {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-column: 2/4;
+}
+
+.toDoList__inputsBox__taskDesc__taskErr {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1/4;
+  -ms-grid-column-align: center;
+      justify-self: center;
 }
 /*# sourceMappingURL=toDoList.css.map */

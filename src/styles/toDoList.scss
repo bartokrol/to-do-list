@@ -1,3 +1,5 @@
+@import "variables";
+
 .toDoList {
 	&__inputsBox {
 		display: flex;
@@ -6,26 +8,10 @@
 		background-color: beige;
 		padding: 10px;
 		&__taskTitle {
-			display: grid;
-			grid-template-columns: repeat(3, 1fr);
-			grid-template-rows: repeat(2, 1fr);
-			justify-content: center;
-			&__label {
-				grid-column: 1;
-				grid-row: 1;
-			}
-			&__input {
-				grid-column: 2/4;
-				grid-row: 1;
-			}
-			&__taskErr {
-				grid-column: 1/4;
-				grid-row: 2;
-				justify-self: center;
-			}
+			@include inputBox;
 		}
 		&__taskDesc {
-			display: block;
+			@include inputBox;
 		}
 	}
 }

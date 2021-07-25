@@ -1,16 +1,21 @@
 const TaskDesc = ({ taskDesc, change, taskDescError }) => {
 	return (
-		<div className="ToDoList__inputsBox__taskDesc">
-			<label htmlFor="taskDesc">Task description:</label>
+		<div className="toDoList__inputsBox__taskDesc">
+			<label
+				className="toDoList__inputsBox__taskDesc__label"
+				htmlFor="taskDesc"
+			>
+				Task description:
+			</label>
 			<textarea
 				id="taskDesc"
 				type="text"
-				className="ToDoList__inputsBox__taskDesc__input"
+				className="toDoList__inputsBox__taskDesc__input"
 				name="taskDesc"
 				value={taskDesc}
 				onChange={change}
 			/>
-			<span className="ToDoList__inputsBox__taskErr">
+			<span className="toDoList__inputsBox__taskDesc__taskErr">
 				{taskDescError ? "Desc error" : null}
 			</span>
 		</div>
