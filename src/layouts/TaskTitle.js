@@ -1,16 +1,27 @@
-const TaskTitle = ({ taskHeader, change, taskHeaderError }) => {
+const TaskTitle = ({
+	taskHeader,
+	change,
+	taskHeaderError,
+	inputsBoxClassName,
+}) => {
+	const taskTitleClassName = `${inputsBoxClassName}__taskTitle`;
 	return (
-		<div className="toDoList__inputsBox__taskTitle">
-			<label className="toDoList__inputsBox__taskTitle__label" htmlFor="taskTitle">Task title:</label>
+		<div className={taskTitleClassName}>
+			<label
+				className={`${taskTitleClassName}__label`}
+				htmlFor="taskTitle"
+			>
+				Task title:
+			</label>
 			<input
 				id="taskTitle"
 				type="text"
-				className="toDoList__inputsBox__taskTitle__input"
+				className={`${taskTitleClassName}__input`}
 				name="taskHeader"
 				value={taskHeader}
 				onChange={change}
 			/>
-			<span className="toDoList__inputsBox__taskTitle__taskErr">
+			<span className={`${taskTitleClassName}__taskErr`}>
 				{taskHeaderError ? "Title error" : null}
 			</span>
 		</div>

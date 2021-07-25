@@ -4,6 +4,7 @@ import Tasks from "../layouts/Tasks";
 import "../styles/toDoList.scss";
 
 function ToDoList() {
+	const listClassName = "toDoList";
 	const [inputs, setInput] = useState({
 		taskHeader: "",
 		taskDesc: "",
@@ -63,12 +64,13 @@ function ToDoList() {
 	};
 
 	return (
-		<div className="toDoList">
+		<div className={`${listClassName}`}>
 			<InputsBox
 				inputs={inputs}
 				change={handleInputChange}
 				click={handleTaskSubmit}
 				errors={errors}
+				listClassName={`${listClassName}`}
 			/>
 			<Tasks tasks={tasks} />
 		</div>

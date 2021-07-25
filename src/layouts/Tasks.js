@@ -1,7 +1,6 @@
 import Task from "./Task";
 
 const Tasks = ({ tasks }) => {
-	console.log(tasks);
 	const tasksArr = tasks.map((task) => (
 		<Task
 			key={task.tasknumber}
@@ -9,7 +8,7 @@ const Tasks = ({ tasks }) => {
 			desc={task.taskDesc}
 		/>
 	));
-	return tasksArr;
+	return <div className="toDoList__tasks">{tasksArr}</div>;
 };
 
 export default Tasks;

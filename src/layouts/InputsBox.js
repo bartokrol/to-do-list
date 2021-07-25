@@ -1,20 +1,23 @@
 import TaskTitle from "./TaskTitle";
 import TaskDesc from "./TaskDesc";
 
-const InputsBox = ({ inputs, change, click, errors }) => {
+const InputsBox = ({ inputs, change, click, errors, listClassName }) => {
+	const inputsBoxClassName = `${listClassName}__inputsBox`;
 	return (
-		<div className="toDoList__inputsBox">
+		<div className={inputsBoxClassName}>
 			<TaskTitle
 				taskHeader={inputs.taskHeader}
 				change={change}
 				taskHeaderError={errors.taskHeaderError}
+				inputsBoxClassName={inputsBoxClassName}
 			/>
 			<TaskDesc
 				taskDesc={inputs.taskDesc}
 				change={change}
 				taskDescError={errors.taskDescError}
+				inputsBoxClassName={inputsBoxClassName}
 			/>
-			<button className="toDoList__inputsBox__addBtn" onClick={click}>
+			<button className={`${inputsBoxClassName}__addBtn`} onClick={click}>
 				Add
 			</button>
 		</div>
