@@ -14,7 +14,9 @@ const InputsBox = ({ inputs, change, click, errors }) => {
 				change={change}
 				taskDescError={errors.taskDescError}
 			/>
-			<button onClick={click}>Add</button>
+			<button className="toDoList__inputsBox__addBtn" onClick={click}>
+				Add
+			</button>
 		</div>
 	);
 };

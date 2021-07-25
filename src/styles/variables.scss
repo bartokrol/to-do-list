@@ -3,14 +3,29 @@
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: repeat(1, 1fr);
 	justify-content: center;
+	margin-bottom: 20px;
 	&__label {
 		grid-column: 1;
+		font-size: 18px;
+		margin-right: 5px;
+		align-self: flex-end;
 	}
 	&__input {
 		grid-column: 2/4;
+		min-width: 100%;
+		max-height: 50px;
+		resize: none;
+		border-radius: 5px;
+		outline: none;
+		border-width: 2px;
+		border-color: black;
+		&:focus {
+			border: solid red;
+		}
 	}
 	&__taskErr {
 		grid-column: 1/4;
 		justify-self: center;
+		color: red;
 	}
 }

@@ -23,17 +23,22 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-bottom: 20px;
 }
 
 .toDoList__inputsBox__taskTitle__label {
   -ms-grid-column: 1;
   grid-column: 1;
+  font-size: 18px;
+  margin-right: 5px;
 }
 
 .toDoList__inputsBox__taskTitle__input {
   -ms-grid-column: 2;
   -ms-grid-column-span: 2;
   grid-column: 2/4;
+  min-width: 100%;
+  max-height: 50px;
 }
 
 .toDoList__inputsBox__taskTitle__taskErr {
@@ -54,17 +59,22 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-bottom: 20px;
 }
 
 .toDoList__inputsBox__taskDesc__label {
   -ms-grid-column: 1;
   grid-column: 1;
+  font-size: 18px;
+  margin-right: 5px;
 }
 
 .toDoList__inputsBox__taskDesc__input {
   -ms-grid-column: 2;
   -ms-grid-column-span: 2;
   grid-column: 2/4;
+  min-width: 100%;
+  max-height: 50px;
 }
 
 .toDoList__inputsBox__taskDesc__taskErr {
@@ -73,5 +83,16 @@
   grid-column: 1/4;
   -ms-grid-column-align: center;
       justify-self: center;
+}
+
+.toDoList__inputsBox__taskDesc__input {
+  min-height: 50px;
+}
+
+.toDoList__inputsBox__addBtn {
+  min-width: 100px;
+  min-height: 25px;
+  font-size: 18px;
+  text-transform: uppercase;
 }
 /*# sourceMappingURL=toDoList.css.map */
