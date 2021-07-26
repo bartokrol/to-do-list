@@ -24,6 +24,8 @@
 			position: relative;
 			padding: 5px;
 			word-wrap: break-word;
+			max-height: 150px;
+			transition: max-height 0.3s ease-out;
 			background-color: burlywood;
 
 			&__buttons {
@@ -36,7 +38,9 @@
 			}
 
 			&.closed {
-				visibility: hidden;
+				max-height: 40px;
+				transition: max-height 0.3s ease-out;
+				overflow: hidden;
 			}
 		}
 	}

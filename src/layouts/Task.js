@@ -7,7 +7,7 @@ const Task = ({
 	taskClassName,
 }) => {
 	const basicClass = `${taskClassName}__task`;
-	const visibleTask = { visible } ? null : "closed";
+	const visibleTask = visible ? null : "closed";
 
 	return (
 		<div className={`${basicClass} ${visibleTask}`}>
