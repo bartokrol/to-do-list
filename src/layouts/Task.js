@@ -8,7 +8,6 @@ const Task = ({
 }) => {
 	const basicClass = `${taskClassName}__task`;
 	const visibleTask = { visible } ? null : "closed";
-	console.log(taskNumber, header, desc, visible);
 
 	return (
 		<div className={`${basicClass} ${visibleTask}`}>

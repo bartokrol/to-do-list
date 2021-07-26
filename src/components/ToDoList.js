@@ -74,8 +74,15 @@ function ToDoList() {
 		e.preventDefault();
 		const target = e.target.id;
 		const task = tasks[target];
+		const tasksArr = [...tasks];
 
-		console.log(task);
+		if (task.taskVisible === true) {
+			task.taskVisible = false;
+		} else {
+			task.taskVisible = true;
+		}
+
+		setTasks([...tasksArr]);
 	};
 
 	return (
