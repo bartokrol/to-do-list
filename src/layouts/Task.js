@@ -17,13 +17,9 @@ const Task = ({
 				<p className={`${basicClass}__taskText__desc`}>{desc}</p>
 			</div>
 			<div className={`${basicClass}__buttons`}>
-				<button className={`${basicClass}__buttons__confirm`}>
-					Confirm
-				</button>
-				<button className={`${basicClass}__buttons__edit`}>Edit</button>
-				<button className={`${basicClass}__buttons__delete`}>
-					Delete
-				</button>
+				<button className={`${basicClass}__buttons__confirm`}></button>
+				<button className={`${basicClass}__buttons__edit`}></button>
+				<button className={`${basicClass}__buttons__delete`}></button>
 			</div>
 			<button
 				id={taskNumber}

@@ -1,8 +1,12 @@
 //tasks variables
 $basicPadding: 10px;
-$openedTaskHeight: 150px;
+$openedTaskHeight: 200px;
 $closedTaskHeight: calc(#{$openedTaskHeight} / 3);
 $taskHeightTransition: max-height 0.3s ease-in-out;
 
+$buttonsWidth: 200px;
+$buttonWidth: calc(#{$buttonsWidth / 4});
+
 $primaryTaskFontSize: 30px;
 $secondaryTaskFontSize: calc(#{$primaryTaskFontSize} / 1.7);
+$taskButtonsFontSize: calc(#{$primaryTaskFontSize} / 2.1);
