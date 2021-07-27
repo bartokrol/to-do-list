@@ -26,17 +26,18 @@
 			padding-left: $basicPadding;
 			word-wrap: break-word;
 			max-height: $openedTaskHeight;
-			transition: max-height 0.3s ease-in-out;
+			transition: $taskHeightTransition;
 			overflow: hidden;
 			background-color: burlywood;
 
 			&__taskText {
 				&__header {
-					font-size: 25px;
+					font-size: $primaryTaskFontSize;
 					line-height: $closedTaskHeight;
 				}
 				&__desc {
 					padding: $basicPadding;
+					font-size: $secondaryTaskFontSize;
 				}
 			}
 
@@ -48,11 +49,14 @@
 				top: $basicPadding;
 				right: $basicPadding;
 				height: calc(#{$closedTaskHeight} - 2 * #{$basicPadding});
+				width: 50px;
+				font-size: 15px;
+				text-transform: uppercase;
 			}
 
 			&.closed {
 				max-height: $closedTaskHeight;
-				transition: max-height 0.3s ease-in-out;
+				transition: $taskHeightTransition;
 			}
 		}
 	}

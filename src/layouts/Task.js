@@ -8,6 +8,7 @@ const Task = ({
 }) => {
 	const basicClass = `${taskClassName}__task`;
 	const visibleTask = visible ? null : "closed";
+	const openCloseBtnText = visible ? "Close" : "Open";
 
 	return (
 		<div className={`${basicClass} ${visibleTask}`}>
@@ -29,7 +30,7 @@ const Task = ({
 				onClick={taskOpenCloseClick}
 				className={`${basicClass}__openCloseBtn`}
 			>
-				Open
+				{openCloseBtnText}
 			</button>
 		</div>
 	);
