@@ -1,4 +1,4 @@
-// @import "variables";
+@import "variables";
 @import "inputsBox";
 
 * {
@@ -22,19 +22,21 @@
 			flex-direction: column;
 			justify-content: space-between;
 			position: relative;
-			padding: 10px;
+			padding-right: $basicPadding;
+			padding-left: $basicPadding;
 			word-wrap: break-word;
-			max-height: 150px;
+			max-height: $openedTaskHeight;
 			transition: max-height 0.3s ease-in-out;
-			overflow-y: hidden;
+			overflow: hidden;
 			background-color: burlywood;
 
 			&__taskText {
 				&__header {
 					font-size: 25px;
+					line-height: $closedTaskHeight;
 				}
 				&__desc {
-					padding: 10px;
+					padding: $basicPadding;
 				}
 			}
 
@@ -43,12 +45,13 @@
 			}
 			&__openCloseBtn {
 				position: absolute;
-				top: 10px;
-				right: 10px;
+				top: $basicPadding;
+				right: $basicPadding;
+				height: calc(#{$closedTaskHeight} - 2 * #{$basicPadding});
 			}
 
 			&.closed {
-				max-height: 50px;
+				max-height: $closedTaskHeight;
 				transition: max-height 0.3s ease-in-out;
 			}
 		}
