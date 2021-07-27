@@ -22,25 +22,34 @@
 			flex-direction: column;
 			justify-content: space-between;
 			position: relative;
-			padding: 5px;
+			padding: 10px;
 			word-wrap: break-word;
 			max-height: 150px;
-			transition: max-height 0.3s ease-out;
+			transition: max-height 0.3s ease-in-out;
+			overflow-y: hidden;
 			background-color: burlywood;
+
+			&__taskText {
+				&__header {
+					font-size: 25px;
+				}
+				&__desc {
+					padding: 10px;
+				}
+			}
 
 			&__buttons {
 				align-self: flex-end;
 			}
 			&__openCloseBtn {
 				position: absolute;
-				top: 5px;
-				right: 5px;
+				top: 10px;
+				right: 10px;
 			}
 
 			&.closed {
-				max-height: 40px;
-				transition: max-height 0.3s ease-out;
-				overflow: hidden;
+				max-height: 50px;
+				transition: max-height 0.3s ease-in-out;
 			}
 		}
 	}
