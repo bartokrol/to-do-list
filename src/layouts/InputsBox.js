@@ -4,14 +4,24 @@ import TaskDesc from "./TaskDesc";
 const InputsBox = ({
 	inputs,
 	change,
-	click,
+	addClick,
+	editClick,
 	errors,
 	toDolistClassName,
 	isTaskEdited,
 }) => {
-	console.log(isTaskEdited);
 	const inputsBoxClassName = `${toDolistClassName}__inputsBox`;
-	const addBtnText = isTaskEdited ? "Edit" : "Add";
+	const editBtn = (
+		<button className={`${inputsBoxClassName}__addBtn`} onClick={editClick}>
+			Edit
+		</button>
+	);
+	const addBtn = (
+		<button className={`${inputsBoxClassName}__addBtn`} onClick={addClick}>
+			Add
+		</button>
+	);
+	const addEditBtn = isTaskEdited ? editBtn : addBtn;
 	return (
 		<div className={inputsBoxClassName}>
 			<TaskTitle
@@ -26,9 +36,7 @@ const InputsBox = ({
 				taskDescError={errors.taskDescError}
 				inputsBoxClassName={inputsBoxClassName}
 			/>
-			<button className={`${inputsBoxClassName}__addBtn`} onClick={click}>
-				{addBtnText}
-			</button>
+			{addEditBtn}
 		</div>
 	);
 };

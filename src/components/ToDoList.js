@@ -28,6 +28,7 @@ function ToDoList() {
 
 	const [editedTask, setEditedTask] = useState({
 		isTaskEdited: false,
+		editedTask: {},
 	});
 
 	const handleInputChange = (e) => {
@@ -109,18 +110,39 @@ function ToDoList() {
 
 		for (let task of tasksArr) {
 			if (target == task.taskNumber) {
+				const editedTask = task;
 				const taskHeader = task.taskHeader;
 				const taskDesc = task.taskDesc;
 				setInput({
 					taskHeader,
 					taskDesc,
 				});
+				setEditedTask({
+					isTaskEdited: true,
+					editedTask,
+				});
 			}
 		}
 
-		setEditedTask({
-			isTaskEdited: true,
+		setError({
+			taskHeaderError: false,
+			taskDescError: false,
 		});
+	};
+
+	const handleTaskEditInsideInputsBox = (e) => {
+		const taskToEdit = editedTask.editedTask;
+		const taskHeader = inputs.taskHeader;
+		const taskDesc = inputs.taskDesc;
+		const tasksArr = [...tasks];
+
+		taskToEdit.taskHeader = taskHeader;
+		taskToEdit.taskDesc = taskDesc;
+		console.log(taskToEdit);
+
+		// for (let task of tasksArr) {
+
+		// }
 	};
 
 	return (
@@ -128,7 +150,8 @@ function ToDoList() {
 			<InputsBox
 				inputs={inputs}
 				change={handleInputChange}
-				click={handleTaskSubmit}
+				addClick={handleTaskSubmit}
+				editClick={handleTaskEditInsideInputsBox}
 				errors={errors}
 				toDolistClassName={`${toDolistClassName}`}
 				isTaskEdited={editedTask.isTaskEdited}
