@@ -8,6 +8,7 @@
 		flex-direction: column;
 		background-color: $inputsBoxBackgroundClr;
 		padding: 10px;
+		border-bottom: 3px solid $thirdClr;
 
 		&__taskTitle {
 			@include inputBox;
@@ -24,16 +25,8 @@
 			font-size: 18px;
 			text-transform: uppercase;
 			transition: all 0.3s ease-in-out;
-			border-radius: 5px;
 			border: none;
-			cursor: pointer;
-			background-color: $btnBackgroundClr;
-			color: $btnFontClr;
-			&:hover {
-				background-color: $btnHoverBackgroundClr;
-				color: $btnHoverFontClr;
-				transition: all 0.3s ease-in-out;
-			}
+			@include btnsStyles;
 		}
 	}
 }

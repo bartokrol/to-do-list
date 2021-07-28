@@ -10,3 +10,16 @@ $buttonWidth: calc(#{$buttonsWidth / 4});
 $primaryTaskFontSize: 30px;
 $secondaryTaskFontSize: calc(#{$primaryTaskFontSize} / 1.7);
 $taskButtonsFontSize: calc(#{$primaryTaskFontSize} / 2.1);
+
+@mixin btnsStyles {
+	background-color: $btnBackgroundClr;
+	color: $btnFontClr;
+	cursor: pointer;
+	border-radius: 5px;
+	transition: 0.3s ease-in-out;
+	&:hover {
+		background-color: $btnHoverBackgroundClr;
+		color: $btnHoverFontClr;
+		transition: 0.3s ease-in-out;
+	}
+}
