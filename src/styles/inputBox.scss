@@ -23,12 +23,13 @@
 		border-width: 2px;
 		border-color: black;
 		&:focus {
-			border: solid red;
+			border: solid $fourthClr;
 		}
 	}
 	&__taskErr {
 		grid-column: 1/4;
 		justify-self: center;
-		color: red;
+		font-style: italic;
+		color: $fourthClr;
 	}
 }

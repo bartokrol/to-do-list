@@ -83,7 +83,7 @@
 				top: $basicPadding;
 				right: $basicPadding;
 				height: calc(#{$closedTaskHeight} - 2 * #{$basicPadding});
-				width: 50px;
+				width: 70px;
 				font-size: 15px;
 				text-transform: uppercase;
 				@include btnsStyles;

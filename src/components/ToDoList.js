@@ -1,6 +1,7 @@
 import { useState } from "react";
 import InputsBox from "../layouts/InputsBox";
 import Tasks from "../layouts/Tasks";
+import DoneTasks from "../layouts/DoneTasks";
 import "../styles/toDoList.scss";
 
 function ToDoList() {
@@ -99,6 +100,7 @@ function ToDoList() {
 				toDolistClassName={`${toDolistClassName}`}
 				click={handleTaskOpenCloseButton}
 			/>
+			<DoneTasks />
 		</div>
 	);
 }
