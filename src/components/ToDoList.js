@@ -26,6 +26,10 @@ function ToDoList() {
 		},
 	]);
 
+	const [editedTask, setEditedTask] = useState({
+		isTaskEdited: false,
+	});
+
 	const handleInputChange = (e) => {
 		const { value, name } = e.target;
 
@@ -113,6 +117,10 @@ function ToDoList() {
 				});
 			}
 		}
+
+		setEditedTask({
+			isTaskEdited: true,
+		});
 	};
 
 	return (
@@ -123,6 +131,7 @@ function ToDoList() {
 				click={handleTaskSubmit}
 				errors={errors}
 				toDolistClassName={`${toDolistClassName}`}
+				isTaskEdited={editedTask.isTaskEdited}
 			/>
 			<Tasks
 				tasks={tasks}

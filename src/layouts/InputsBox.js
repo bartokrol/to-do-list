@@ -1,8 +1,17 @@
 import TaskTitle from "./TaskTitle";
 import TaskDesc from "./TaskDesc";
 
-const InputsBox = ({ inputs, change, click, errors, toDolistClassName }) => {
+const InputsBox = ({
+	inputs,
+	change,
+	click,
+	errors,
+	toDolistClassName,
+	isTaskEdited,
+}) => {
+	console.log(isTaskEdited);
 	const inputsBoxClassName = `${toDolistClassName}__inputsBox`;
+	const addBtnText = isTaskEdited ? "Edit" : "Add";
 	return (
 		<div className={inputsBoxClassName}>
 			<TaskTitle
@@ -18,7 +27,7 @@ const InputsBox = ({ inputs, change, click, errors, toDolistClassName }) => {
 				inputsBoxClassName={inputsBoxClassName}
 			/>
 			<button className={`${inputsBoxClassName}__addBtn`} onClick={click}>
-				Add
+				{addBtnText}
 			</button>
 		</div>
 	);
