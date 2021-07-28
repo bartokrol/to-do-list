@@ -70,12 +70,21 @@
 
 				&__confirm {
 					background: url(./svg/confirmBtn.svg);
+					&:hover {
+						background-image: url(./svg/hoverConfirmBtn.svg);
+					}
 				}
 				&__edit {
 					background: url(./svg/editBtn.svg);
+					&:hover {
+						background-image: url(./svg/hoverEditBtn.svg);
+					}
 				}
 				&__delete {
 					background: url(./svg/deleteBtn.svg);
+					&:hover {
+						background-image: url(./svg/hoverDeleteBtn.svg);
+					}
 				}
 			}
 			&__openCloseBtn {
