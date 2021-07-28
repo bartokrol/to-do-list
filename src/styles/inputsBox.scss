@@ -1,11 +1,12 @@
 @import "inputBox";
+@import "colors";
 
 @mixin inputsBox {
 	&__inputsBox {
 		display: flex;
 		align-items: center;
 		flex-direction: column;
-		background-color: beige;
+		background-color: $inputsBoxBackgroundClr;
 		padding: 10px;
 
 		&__taskTitle {
@@ -22,6 +23,17 @@
 			min-height: 25px;
 			font-size: 18px;
 			text-transform: uppercase;
+			transition: all 0.3s ease-in-out;
+			border-radius: 5px;
+			border: none;
+			cursor: pointer;
+			background-color: $btnBackgroundClr;
+			color: $btnFontClr;
+			&:hover {
+				background-color: $btnHoverBackgroundClr;
+				color: $btnHoverFontClr;
+				transition: all 0.3s ease-in-out;
+			}
 		}
 	}
 }

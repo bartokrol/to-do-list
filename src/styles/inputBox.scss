@@ -1,3 +1,5 @@
+@import "colors";
+
 @mixin inputBox {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
@@ -9,6 +11,7 @@
 		font-size: 18px;
 		margin-right: 5px;
 		align-self: flex-end;
+		color: $labelClr;
 	}
 	&__input {
 		grid-column: 2/4;
