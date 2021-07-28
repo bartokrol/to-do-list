@@ -100,7 +100,7 @@ function ToDoList() {
 				toDolistClassName={`${toDolistClassName}`}
 				click={handleTaskOpenCloseButton}
 			/>
-			<DoneTasks />
+			<DoneTasks toDolistClassName={`${toDolistClassName}`} />
 		</div>
 	);
 }

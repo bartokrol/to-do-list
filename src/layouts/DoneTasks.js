@@ -1,7 +1,8 @@
-const DoneTasks = () => {
+const DoneTasks = ({ toDolistClassName }) => {
+	const doneTasksClassName = `${toDolistClassName}__doneTasks`;
 	return (
-		<div>
-			<h1>Done Tasks</h1>
+		<div className={doneTasksClassName}>
+			<h1 className={`${doneTasksClassName}__title`}>Done Tasks</h1>
 		</div>
 	);
 };

@@ -5,9 +5,11 @@
 	&__tasks {
 		background-color: $tasksBackgroundClr;
 		color: $tasksFontClr;
+		border-bottom: 3px solid $thirdClr;
 		&__title {
 			font-size: 40px;
 			text-align: center;
+			text-transform: uppercase;
 		}
 		&__task {
 			text-align: start;
@@ -22,8 +24,6 @@
 			transition: $taskHeightTransition;
 			overflow: hidden;
 			background-color: $taskBackgroundClr;
-			border-bottom: 3px solid $thirdClr;
-
 			&__taskText {
 				&__header {
 					font-size: $primaryTaskFontSize;
