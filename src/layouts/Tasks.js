@@ -1,6 +1,6 @@
 import Task from "./Task";
 
-const Tasks = ({ tasks, toDolistClassName, click }) => {
+const Tasks = ({ tasks, toDolistClassName, openCloseBtn, deleteBtn }) => {
 	const tasksClassName = `${toDolistClassName}__tasks`;
 	const tasksArr = tasks.map((task) => (
 		<Task
@@ -9,7 +9,8 @@ const Tasks = ({ tasks, toDolistClassName, click }) => {
 			desc={task.taskDesc}
 			visible={task.taskVisible}
 			taskClassName={tasksClassName}
-			taskOpenCloseClick={click}
+			taskOpenCloseClick={openCloseBtn}
+			taskDeleteClick={deleteBtn}
 		/>
 	));
 	return (

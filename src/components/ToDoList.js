@@ -72,7 +72,6 @@ function ToDoList() {
 	};
 
 	const handleTaskOpenCloseButton = (e) => {
-		e.preventDefault();
 		const target = e.target.id;
 		const task = tasks[target];
 		const tasksArr = [...tasks];
@@ -81,6 +80,20 @@ function ToDoList() {
 			task.taskVisible = false;
 		} else {
 			task.taskVisible = true;
+		}
+
+		setTasks([...tasksArr]);
+	};
+
+	const handleTaskDelete = (e) => {
+		const target = e.target.id;
+		const tasksArr = [...tasks];
+
+		for (let task of tasksArr) {
+			if (target == task.taskNumber) {
+				const taskIndex = tasksArr.indexOf(task);
+				tasksArr.splice(taskIndex, 1);
+			}
 		}
 
 		setTasks([...tasksArr]);
@@ -98,7 +111,8 @@ function ToDoList() {
 			<Tasks
 				tasks={tasks}
 				toDolistClassName={`${toDolistClassName}`}
-				click={handleTaskOpenCloseButton}
+				openCloseBtn={handleTaskOpenCloseButton}
+				deleteBtn={handleTaskDelete}
 			/>
 			<DoneTasks toDolistClassName={`${toDolistClassName}`} />
 		</div>
