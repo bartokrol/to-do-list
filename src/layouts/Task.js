@@ -5,6 +5,7 @@ const Task = ({
 	visible,
 	taskOpenCloseClick,
 	taskDeleteClick,
+	taskEditClick,
 	taskClassName,
 }) => {
 	const basicClass = `${taskClassName}__task`;
@@ -19,7 +20,11 @@ const Task = ({
 			</div>
 			<div className={`${basicClass}__buttons`}>
 				<button className={`${basicClass}__buttons__confirm`}></button>
-				<button className={`${basicClass}__buttons__edit`}></button>
+				<button
+					id={taskNumber}
+					className={`${basicClass}__buttons__edit`}
+					onClick={taskEditClick}
+				></button>
 				<button
 					id={taskNumber}
 					className={`${basicClass}__buttons__delete`}

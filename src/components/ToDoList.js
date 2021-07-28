@@ -99,6 +99,22 @@ function ToDoList() {
 		setTasks([...tasksArr]);
 	};
 
+	const handleTaskEdit = (e) => {
+		const target = e.target.id;
+		const tasksArr = [...tasks];
+
+		for (let task of tasksArr) {
+			if (target == task.taskNumber) {
+				const taskHeader = task.taskHeader;
+				const taskDesc = task.taskDesc;
+				setInput({
+					taskHeader,
+					taskDesc,
+				});
+			}
+		}
+	};
+
 	return (
 		<div className={`${toDolistClassName}`}>
 			<InputsBox
@@ -113,6 +129,7 @@ function ToDoList() {
 				toDolistClassName={`${toDolistClassName}`}
 				openCloseBtn={handleTaskOpenCloseButton}
 				deleteBtn={handleTaskDelete}
+				editBtn={handleTaskEdit}
 			/>
 			<DoneTasks toDolistClassName={`${toDolistClassName}`} />
 		</div>
