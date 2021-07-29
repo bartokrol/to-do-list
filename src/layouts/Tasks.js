@@ -6,6 +6,7 @@ const Tasks = ({
 	openCloseBtn,
 	deleteBtn,
 	editBtn,
+	confirmBtn,
 }) => {
 	const tasksClassName = `${toDolistClassName}__tasks`;
 	const tasksArr = tasks.map((task) => (
@@ -18,6 +19,7 @@ const Tasks = ({
 			taskOpenCloseClick={openCloseBtn}
 			taskDeleteClick={deleteBtn}
 			taskEditClick={editBtn}
+			taskConfirmClick={confirmBtn}
 		/>
 	));
 	return (

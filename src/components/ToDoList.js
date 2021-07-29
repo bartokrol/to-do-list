@@ -23,6 +23,7 @@ function ToDoList() {
 				"KrólKrólKrólKrólKrólKrólKrólKrólKrólKrólKrólKrólKrólKrólKrólKról",
 			taskNumber: 0,
 			taskVisible: true,
+			taskCompleted: false,
 		},
 	]);
 
@@ -48,6 +49,7 @@ function ToDoList() {
 		const taskArr = tasks;
 		const taskNumber = tasks.length;
 		const taskVisible = true;
+		const taskCompleted = false;
 
 		if (taskHeader.length < 3) {
 			taskHeaderError = true;
@@ -62,7 +64,13 @@ function ToDoList() {
 		}
 
 		if (taskHeader.length > 2 && taskDesc.length > 10) {
-			taskArr.push({ taskHeader, taskDesc, taskNumber, taskVisible });
+			taskArr.push({
+				taskHeader,
+				taskDesc,
+				taskNumber,
+				taskVisible,
+				taskCompleted,
+			});
 			setTasks(taskArr);
 			setInput({
 				taskHeader: "",
@@ -130,7 +138,7 @@ function ToDoList() {
 		});
 	};
 
-	const handleTaskEditInsideInputsBox = (e) => {
+	const handleTaskEditInsideInputsBox = () => {
 		const taskToEdit = editedTask.editedTask;
 		const taskHeader = inputs.taskHeader;
 		const taskDesc = inputs.taskDesc;
@@ -164,6 +172,21 @@ function ToDoList() {
 		}
 	};
 
+	const handleTaskConfirm = (e) => {
+		const target = e.target.id;
+		console.log(target);
+		const tasksArr = [...tasks];
+
+		for (let task of tasksArr) {
+			if (target == task.taskNumber) {
+				const taskIndex = tasksArr.indexOf(task);
+				tasksArr[taskIndex].taskCompleted = true;
+			}
+		}
+
+		setTasks([...tasksArr]);
+	};
+
 	return (
 		<div className={`${toDolistClassName}`}>
 			<InputsBox
@@ -181,6 +204,7 @@ function ToDoList() {
 				openCloseBtn={handleTaskOpenCloseButton}
 				deleteBtn={handleTaskDelete}
 				editBtn={handleTaskEdit}
+				confirmBtn={handleTaskConfirm}
 			/>
 			<DoneTasks toDolistClassName={`${toDolistClassName}`} />
 		</div>
