@@ -32,6 +32,8 @@ function ToDoList() {
 		editedTask: {},
 	});
 
+	const [completedTasks, setCompletedTasks] = useState([]);
+
 	const handleInputChange = (e) => {
 		const { value, name } = e.target;
 
@@ -174,17 +176,20 @@ function ToDoList() {
 
 	const handleTaskConfirm = (e) => {
 		const target = e.target.id;
-		console.log(target);
 		const tasksArr = [...tasks];
+		const completedTasksArr = [...completedTasks];
 
 		for (let task of tasksArr) {
 			if (target == task.taskNumber) {
 				const taskIndex = tasksArr.indexOf(task);
 				tasksArr[taskIndex].taskCompleted = true;
+				tasksArr.splice(taskIndex, 1);
+				completedTasksArr.push(task);
 			}
 		}
 
 		setTasks([...tasksArr]);
+		setCompletedTasks([...completedTasksArr]);
 	};
 
 	return (
@@ -206,7 +211,10 @@ function ToDoList() {
 				editBtn={handleTaskEdit}
 				confirmBtn={handleTaskConfirm}
 			/>
-			<DoneTasks toDolistClassName={`${toDolistClassName}`} />
+			<DoneTasks
+				completedTasks={completedTasks}
+				toDolistClassName={`${toDolistClassName}`}
+			/>
 		</div>
 	);
 }
