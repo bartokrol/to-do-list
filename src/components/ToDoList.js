@@ -134,15 +134,34 @@ function ToDoList() {
 		const taskToEdit = editedTask.editedTask;
 		const taskHeader = inputs.taskHeader;
 		const taskDesc = inputs.taskDesc;
-		const tasksArr = [...tasks];
+		let { taskHeaderError, taskDescError } = errors;
 
-		taskToEdit.taskHeader = taskHeader;
-		taskToEdit.taskDesc = taskDesc;
-		console.log(taskToEdit);
+		if (taskHeader.length < 3) {
+			taskHeaderError = true;
+		} else {
+			taskHeaderError = false;
+		}
 
-		// for (let task of tasksArr) {
+		if (taskDesc.length < 11) {
+			taskDescError = true;
+		} else {
+			taskDescError = false;
+		}
 
-		// }
+		setError({
+			taskHeaderError,
+			taskDescError,
+		});
+
+		if (!taskHeaderError && !taskDescError) {
+			taskToEdit.taskHeader = taskHeader;
+			taskToEdit.taskDesc = taskDesc;
+			setInput({ taskHeader: "", taskDesc: "" });
+			setEditedTask({
+				isTaskEdited: false,
+				editedTask: {},
+			});
+		}
 	};
 
 	return (
