@@ -1,12 +1,20 @@
-import Task from "./Task";
-
 const DoneTasks = ({ completedTasks, toDolistClassName }) => {
-	const doneTasksClassName = `${toDolistClassName}__doneTasks`;
+	const basicClass = `${toDolistClassName}__task`;
+	// const visibleTask = visible ? null : "closed";
+	// const openCloseBtnText = visible ? "Close" : "Open";
+
+	// ${visibleTask}
 	const completedTasksArr = completedTasks.map((task) => (
-		<>
-			<h1>{task.taskHeader}</h1>
-			<h2>{task.taskDesc}</h2>
-		</>
+		<div className={`${basicClass} `}>
+			<div className={`${basicClass}__taskText`}>
+				<h1 className={`${basicClass}__taskText__header`}>
+					{task.taskHeader}
+				</h1>
+				<p className={`${basicClass}__taskText__desc`}>
+					{task.taskDesc}
+				</p>
+			</div>
+		</div>
 	));
 	//
 	// <Task
@@ -20,12 +28,12 @@ const DoneTasks = ({ completedTasks, toDolistClassName }) => {
 	// 	taskEditClick={editBtn}
 	// 	taskConfirmClick={confirmBtn}
 	// />
-	return (
-		<div className={doneTasksClassName}>
-			<h1 className={`${doneTasksClassName}__title`}>Done Tasks</h1>
-			{completedTasksArr}
-		</div>
-	);
+	// return (
+	// 	<div className={doneTasksClassName}>
+	// 		<h1 className={`${doneTasksClassName}__title`}>Done Tasks</h1>
+	// 		{completedTasksArr}
+	// 	</div>
+	// );
 };
 
 export default DoneTasks;

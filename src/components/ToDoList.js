@@ -205,16 +205,17 @@ function ToDoList() {
 			/>
 			<Tasks
 				tasks={tasks}
+				completedTasks={completedTasks}
 				toDolistClassName={`${toDolistClassName}`}
 				openCloseBtn={handleTaskOpenCloseButton}
 				deleteBtn={handleTaskDelete}
 				editBtn={handleTaskEdit}
 				confirmBtn={handleTaskConfirm}
 			/>
-			<DoneTasks
+			{/* <DoneTasks
 				completedTasks={completedTasks}
 				toDolistClassName={`${toDolistClassName}`}
-			/>
+			/> */}
 		</div>
 	);
 }
