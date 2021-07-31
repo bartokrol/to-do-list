@@ -1,4 +1,5 @@
 import Task from "./Task";
+import CompletedTasks from "./CompletedTasks";
 
 const Tasks = ({
 	tasks,
@@ -11,16 +12,14 @@ const Tasks = ({
 }) => {
 	const tasksClassName = `${toDolistClassName}__tasks`;
 	const completedTasksArr = completedTasks.map((task) => (
-		<div className={`${toDolistClassName} `}>
-			<div className={`${toDolistClassName}__taskText`}>
-				<h1 className={`${toDolistClassName}__taskText__header`}>
-					{task.taskHeader}
-				</h1>
-				<p className={`${toDolistClassName}__taskText__desc`}>
-					{task.taskDesc}
-				</p>
-			</div>
-		</div>
+		<CompletedTasks
+			taskNumber={task.taskNumber}
+			header={task.taskHeader}
+			desc={task.taskDesc}
+			visible={task.taskVisible}
+			taskClassName={tasksClassName}
+			taskOpenCloseClick={openCloseBtn}
+		/>
 	));
 
 	const tasksArr = tasks.map((task) => (

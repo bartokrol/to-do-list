@@ -1,7 +1,7 @@
 import { useState } from "react";
 import InputsBox from "../layouts/InputsBox";
 import Tasks from "../layouts/Tasks";
-import DoneTasks from "../layouts/DoneTasks";
+import DoneTasks from "../layouts/CompletedTasks";
 import "../styles/toDoList.scss";
 
 function ToDoList() {
