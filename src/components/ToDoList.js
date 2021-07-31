@@ -88,16 +88,31 @@ function ToDoList() {
 
 	const handleTaskOpenCloseButton = (e) => {
 		const target = e.target.id;
-		const task = tasks[target];
-		const tasksArr = [...tasks];
+		const taskCompleted = e.target.value;
 
-		if (task.taskVisible === true) {
-			task.taskVisible = false;
-		} else {
-			task.taskVisible = true;
+		console.log(taskCompleted);
+		if (taskCompleted) {
+			const task = completedTasks[target];
+			const tasksArr = [...completedTasks];
+			if (task.taskVisible === true) {
+				task.taskVisible = false;
+			} else {
+				task.taskVisible = true;
+			}
+
+			setCompletedTasks([...tasksArr]);
 		}
 
-		setTasks([...tasksArr]);
+		if (!taskCompleted) {
+			const task = tasks[target];
+			const tasksArr = [...tasks];
+			if (task.taskVisible === true) {
+				task.taskVisible = false;
+			} else {
+				task.taskVisible = true;
+			}
+			setTasks([...tasksArr]);
+		}
 	};
 
 	const handleTaskDelete = (e) => {

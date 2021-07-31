@@ -19,6 +19,7 @@ const Tasks = ({
 			visible={task.taskVisible}
 			taskClassName={tasksClassName}
 			taskOpenCloseClick={openCloseBtn}
+			taskCompleted={task.taskCompleted}
 		/>
 	));
 
@@ -33,6 +34,7 @@ const Tasks = ({
 			taskDeleteClick={deleteBtn}
 			taskEditClick={editBtn}
 			taskConfirmClick={confirmBtn}
+			taskCompleted={task.taskCompleted}
 		/>
 	));
 	return (

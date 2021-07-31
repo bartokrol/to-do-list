@@ -8,6 +8,7 @@ const Task = ({
 	taskEditClick,
 	taskConfirmClick,
 	taskClassName,
+	taskCompleted,
 }) => {
 	const basicClass = `${taskClassName}__task`;
 	const visibleTask = visible ? null : "closed";
@@ -38,6 +39,7 @@ const Task = ({
 			</div>
 			<button
 				id={taskNumber}
+				value={taskCompleted}
 				onClick={taskOpenCloseClick}
 				className={`${basicClass}__openCloseBtn`}
 			>
