@@ -90,8 +90,7 @@ function ToDoList() {
 		const target = e.target.id;
 		const taskCompleted = e.target.value;
 
-		console.log(taskCompleted);
-		if (taskCompleted) {
+		if (taskCompleted === "true") {
 			const task = completedTasks[target];
 			const tasksArr = [...completedTasks];
 			if (task.taskVisible === true) {
@@ -99,11 +98,10 @@ function ToDoList() {
 			} else {
 				task.taskVisible = true;
 			}
-
 			setCompletedTasks([...tasksArr]);
 		}
 
-		if (!taskCompleted) {
+		if (taskCompleted === "false") {
 			const task = tasks[target];
 			const tasksArr = [...tasks];
 			if (task.taskVisible === true) {
