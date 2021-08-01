@@ -1,5 +1,6 @@
 @import "variables";
 @import "colors";
+@import "task";
 
 @mixin tasks {
 	&__tasks {
@@ -11,89 +12,10 @@
 			text-transform: uppercase;
 		}
 		&__task {
-			text-align: start;
-			display: flex;
-			flex-direction: column;
-			justify-content: space-between;
-			position: relative;
-			padding-right: $basicPadding;
-			padding-left: $basicPadding;
-			word-wrap: break-word;
-			max-height: $openedTaskHeight;
-			transition: $taskHeightTransition;
-			overflow: hidden;
-			background-color: $taskBackgroundClr;
-			border-bottom: 3px solid $thirdClr;
-			&__taskText {
-				&__header {
-					font-size: $primaryTaskFontSize;
-					line-height: $closedTaskHeight;
-					color: $taskHeaderClr;
-				}
-				&__desc {
-					padding: $basicPadding;
-					font-size: $secondaryTaskFontSize;
-					color: $taskDescClr;
-				}
-			}
-
-			&__buttons {
-				align-self: flex-end;
-				padding: $basicPadding;
-				min-height: 60px;
-				width: $buttonsWidth;
-				display: flex;
-				flex-direction: row;
-				justify-content: space-between;
-
-				button {
-					width: $buttonWidth;
-					font-size: $taskButtonsFontSize;
-					color: inherit;
-					border: none;
-					padding: 0;
-					font: inherit;
-					cursor: pointer;
-					outline: inherit;
-					background-size: contain;
-					background-repeat: no-repeat;
-					background-position: center;
-				}
-
-				&__confirm {
-					background: url(./svg/confirmBtn.svg);
-					&:hover {
-						background-image: url(./svg/hoverConfirmBtn.svg);
-					}
-				}
-				&__edit {
-					background: url(./svg/editBtn.svg);
-					&:hover {
-						background-image: url(./svg/hoverEditBtn.svg);
-					}
-				}
-				&__delete {
-					background: url(./svg/deleteBtn.svg);
-					&:hover {
-						background-image: url(./svg/hoverDeleteBtn.svg);
-					}
-				}
-			}
-			&__openCloseBtn {
-				position: absolute;
-				top: $basicPadding;
-				right: $basicPadding;
-				height: calc(#{$closedTaskHeight} - 2 * #{$basicPadding});
-				width: 70px;
-				font-size: 15px;
-				text-transform: uppercase;
-				@include btnsStyles;
-			}
-
-			&.closed {
-				max-height: $closedTaskHeight;
-				transition: $taskHeightTransition;
-			}
+			@include task;
+		}
+		&__completedTask {
+			@include task;
 		}
 	}
 }

@@ -16,8 +16,9 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: beige;
+  background-color: #dbe2ef;
   padding: 10px;
+  border-bottom: 3px solid #3f72af;
 }
 
 .toDoList__inputsBox__taskTitle {
@@ -40,6 +41,7 @@
   margin-right: 5px;
   -ms-flex-item-align: end;
       align-self: flex-end;
+  color: #3f72af;
 }
 
 .toDoList__inputsBox__taskTitle__input {
@@ -56,7 +58,7 @@
 }
 
 .toDoList__inputsBox__taskTitle__input:focus {
-  border: solid red;
+  border: solid #112d4e;
 }
 
 .toDoList__inputsBox__taskTitle__taskErr {
@@ -65,7 +67,8 @@
   grid-column: 1/4;
   -ms-grid-column-align: center;
       justify-self: center;
-  color: red;
+  font-style: italic;
+  color: #112d4e;
 }
 
 .toDoList__inputsBox__taskDesc {
@@ -88,6 +91,7 @@
   margin-right: 5px;
   -ms-flex-item-align: end;
       align-self: flex-end;
+  color: #3f72af;
 }
 
 .toDoList__inputsBox__taskDesc__input {
@@ -104,7 +108,7 @@
 }
 
 .toDoList__inputsBox__taskDesc__input:focus {
-  border: solid red;
+  border: solid #112d4e;
 }
 
 .toDoList__inputsBox__taskDesc__taskErr {
@@ -113,7 +117,8 @@
   grid-column: 1/4;
   -ms-grid-column-align: center;
       justify-self: center;
-  color: red;
+  font-style: italic;
+  color: #112d4e;
 }
 
 .toDoList__inputsBox__taskDesc__input {
@@ -125,15 +130,33 @@
   min-height: 25px;
   font-size: 18px;
   text-transform: uppercase;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  border: none;
+  background-color: #112d4e;
+  color: #f9f7f7;
+  cursor: pointer;
+  border-radius: 5px;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+.toDoList__inputsBox__addBtn:hover {
+  background-color: #f9f7f7;
+  color: #112d4e;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
 .toDoList__tasks {
-  background-color: brown;
+  background-color: #112d4e;
+  color: #f9f7f7;
 }
 
 .toDoList__tasks__title {
   font-size: 40px;
   text-align: center;
+  text-transform: uppercase;
 }
 
 .toDoList__tasks__task {
@@ -149,23 +172,111 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   position: relative;
-  padding: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
   word-wrap: break-word;
-  background-color: burlywood;
+  max-height: 250px;
+  -webkit-transition: max-height 0.3s ease-in-out;
+  transition: max-height 0.3s ease-in-out;
+  overflow: hidden;
+  background-color: #dbe2ef;
+  border-bottom: 3px solid #3f72af;
+}
+
+.toDoList__tasks__task__taskText__header {
+  font-size: 30px;
+  line-height: calc(250px / 3);
+  color: #112d4e;
+}
+
+.toDoList__tasks__task__taskText__desc {
+  padding: 10px;
+  font-size: calc(30px / 1.7);
+  color: #3f72af;
 }
 
 .toDoList__tasks__task__buttons {
   -ms-flex-item-align: end;
       align-self: flex-end;
+  padding: 10px;
+  min-height: 60px;
+  width: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.toDoList__tasks__task__buttons button {
+  width: calc(50px);
+  font-size: calc(30px / 2.1);
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.toDoList__tasks__task__buttons__confirm {
+  background: url(./svg/confirmBtn.svg);
+}
+
+.toDoList__tasks__task__buttons__confirm:hover {
+  background-image: url(./svg/hoverConfirmBtn.svg);
+}
+
+.toDoList__tasks__task__buttons__edit {
+  background: url(./svg/editBtn.svg);
+}
+
+.toDoList__tasks__task__buttons__edit:hover {
+  background-image: url(./svg/hoverEditBtn.svg);
+}
+
+.toDoList__tasks__task__buttons__delete {
+  background: url(./svg/deleteBtn.svg);
+}
+
+.toDoList__tasks__task__buttons__delete:hover {
+  background-image: url(./svg/hoverDeleteBtn.svg);
 }
 
 .toDoList__tasks__task__openCloseBtn {
   position: absolute;
-  top: 5px;
-  right: 5px;
+  top: 10px;
+  right: 10px;
+  height: calc(calc(250px / 3) - 2 * 10px);
+  width: 70px;
+  font-size: 15px;
+  text-transform: uppercase;
+  background-color: #112d4e;
+  color: #f9f7f7;
+  cursor: pointer;
+  border-radius: 5px;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+.toDoList__tasks__task__openCloseBtn:hover {
+  background-color: #f9f7f7;
+  color: #112d4e;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
 .toDoList__tasks__task.closed {
-  visibility: hidden;
+  max-height: calc(250px / 3);
+  -webkit-transition: max-height 0.3s ease-in-out;
+  transition: max-height 0.3s ease-in-out;
 }
 /*# sourceMappingURL=toDoList.css.map */

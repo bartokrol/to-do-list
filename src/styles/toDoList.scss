@@ -12,14 +12,5 @@
 .toDoList {
 	@include inputsBox;
 	@include tasks;
-	&__doneTasks {
-		background-color: $tasksBackgroundClr;
-		color: $tasksFontClr;
-		border-bottom: 3px solid $thirdClr;
-		&__title {
-			font-size: 40px;
-			text-align: center;
-			text-transform: uppercase;
-		}
-	}
+	
 }
