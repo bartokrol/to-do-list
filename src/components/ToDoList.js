@@ -188,19 +188,12 @@ function ToDoList() {
 		const taskDesc = inputs.taskDesc;
 		let { taskHeaderError, taskDescError } = errors;
 
-		taskHeaderError = checkInputsForErrors(
+		[taskHeaderError, taskDescError] = checkInputsForErrors(
 			taskHeader,
 			taskDesc,
 			taskHeaderError,
 			taskDescError
-		)[0];
-
-		taskDescError = checkInputsForErrors(
-			taskHeader,
-			taskDesc,
-			taskHeaderError,
-			taskDescError
-		)[1];
+		);
 
 		setError({
 			taskHeaderError,
