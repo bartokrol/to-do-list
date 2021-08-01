@@ -15,16 +15,7 @@ function ToDoList() {
 		taskDescError: false,
 	});
 
-	const [tasks, setTasks] = useState([
-		{
-			taskHeader: "Bartosz",
-			taskDesc:
-				"KrólKrólKrólKrólKrólKrólKrólKrólKrólKrólKrólKrólKrólKrólKrólKról",
-			taskNumber: 0,
-			taskVisible: true,
-			taskCompleted: false,
-		},
-	]);
+	const [tasks, setTasks] = useState([]);
 
 	const [editedTask, setEditedTask] = useState({
 		isTaskEdited: false,
@@ -42,9 +33,7 @@ function ToDoList() {
 		});
 	};
 
-	const handleTaskSubmit = (e) => {
-		e.preventDefault();
-
+	const handleTaskSubmit = () => {
 		const { taskHeader, taskDesc } = inputs;
 		let { taskHeaderError, taskDescError } = errors;
 		const taskArr = tasks;
@@ -52,17 +41,12 @@ function ToDoList() {
 		const taskVisible = true;
 		const taskCompleted = false;
 
-		if (taskHeader.length < 3) {
-			taskHeaderError = true;
-		} else {
-			taskHeaderError = false;
-		}
-
-		if (taskDesc.length < 11) {
-			taskDescError = true;
-		} else {
-			taskDescError = false;
-		}
+		[taskHeaderError, taskDescError] = checkInputsForErrors(
+			taskHeader,
+			taskDesc,
+			taskHeaderError,
+			taskDescError
+		);
 
 		if (taskHeader.length > 2 && taskDesc.length > 10) {
 			taskArr.push({
@@ -249,10 +233,6 @@ function ToDoList() {
 				editBtn={handleTaskEdit}
 				confirmBtn={handleTaskConfirm}
 			/>
-			{/* <DoneTasks
-				completedTasks={completedTasks}
-				toDolistClassName={`${toDolistClassName}`}
-			/> */}
 		</div>
 	);
 }
