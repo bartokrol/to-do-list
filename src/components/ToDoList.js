@@ -161,12 +161,12 @@ function ToDoList() {
 		});
 	};
 
-	const handleTaskEditInsideInputsBox = () => {
-		const taskToEdit = editedTask.editedTask;
-		const taskHeader = inputs.taskHeader;
-		const taskDesc = inputs.taskDesc;
-		let { taskHeaderError, taskDescError } = errors;
-
+	const checkInputsForErrors = (
+		taskHeader,
+		taskDesc,
+		taskHeaderError,
+		taskDescError
+	) => {
 		if (taskHeader.length < 3) {
 			taskHeaderError = true;
 		} else {
@@ -178,6 +178,29 @@ function ToDoList() {
 		} else {
 			taskDescError = false;
 		}
+
+		return [taskHeaderError, taskDescError];
+	};
+
+	const handleTaskEditInsideInputsBox = () => {
+		const taskToEdit = editedTask.editedTask;
+		const taskHeader = inputs.taskHeader;
+		const taskDesc = inputs.taskDesc;
+		let { taskHeaderError, taskDescError } = errors;
+
+		taskHeaderError = checkInputsForErrors(
+			taskHeader,
+			taskDesc,
+			taskHeaderError,
+			taskDescError
+		)[0];
+
+		taskDescError = checkInputsForErrors(
+			taskHeader,
+			taskDesc,
+			taskHeaderError,
+			taskDescError
+		)[1];
 
 		setError({
 			taskHeaderError,
