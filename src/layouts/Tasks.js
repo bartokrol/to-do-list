@@ -41,7 +41,7 @@ const Tasks = ({
 		<div className={tasksClassName}>
 			<h1 className={`${tasksClassName}__title`}>Tasks</h1>
 			{tasksArr}
-			<h1 className={`${tasksClassName}__title`}>Done Tasks</h1>
+			<h1 className={`${tasksClassName}__title`}>Tasks Done</h1>
 			{completedTasksArr}
 		</div>
 	);
