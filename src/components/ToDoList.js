@@ -1,7 +1,6 @@
 import { useState } from "react";
 import InputsBox from "../layouts/InputsBox";
 import Tasks from "../layouts/Tasks";
-import DoneTasks from "../layouts/CompletedTasks";
 import "../styles/toDoList.scss";
 
 function ToDoList() {
@@ -86,30 +85,39 @@ function ToDoList() {
 		});
 	};
 
+	const findTaskIndex = (target, tasksArr) => {
+		for (let task of tasksArr) {
+			if (target == task.taskNumber) {
+				const taskIndex = tasksArr.indexOf(task);
+				return taskIndex;
+			}
+		}
+	};
+
+	const handleTaskVisibility = (tasksArr, target) => {
+		const arr = [...tasksArr];
+		const taskIndex = findTaskIndex(target, arr);
+		const task = tasksArr[taskIndex];
+		if (task.taskVisible === true) {
+			task.taskVisible = false;
+		} else {
+			task.taskVisible = true;
+		}
+		return arr;
+	};
+
 	const handleTaskOpenCloseButton = (e) => {
 		const target = e.target.id;
 		const taskCompleted = e.target.value;
 
 		if (taskCompleted === "true") {
-			const task = completedTasks[target];
-			const tasksArr = [...completedTasks];
-			if (task.taskVisible === true) {
-				task.taskVisible = false;
-			} else {
-				task.taskVisible = true;
-			}
-			setCompletedTasks([...tasksArr]);
+			const arr = handleTaskVisibility(completedTasks, target);
+			setCompletedTasks([...arr]);
 		}
 
 		if (taskCompleted === "false") {
-			const task = tasks[target];
-			const tasksArr = [...tasks];
-			if (task.taskVisible === true) {
-				task.taskVisible = false;
-			} else {
-				task.taskVisible = true;
-			}
-			setTasks([...tasksArr]);
+			const arr = handleTaskVisibility(tasks, target);
+			setTasks([...arr]);
 		}
 	};
 
