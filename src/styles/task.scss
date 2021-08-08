@@ -18,14 +18,14 @@
 	&__taskText {
 		&__header {
 			font-size: $primaryTaskFontSize;
-			font-family: "Indie Flower", cursive;
+			font-family: $primaryFont;
 			line-height: $closedTaskHeight;
 			color: $taskHeaderClr;
 		}
 		&__desc {
 			padding: $basicPadding;
 			font-size: $secondaryTaskFontSize;
-			font-family: "Lato", sans-serif;
+			font-family: $secondaryFont;
 			font-style: italic;
 			color: $taskDescClr;
 		}
@@ -36,7 +36,7 @@
 		right: $basicPadding;
 		height: calc(#{$closedTaskHeight} - 2 * #{$basicPadding});
 		width: 70px;
-		font-family: "Indie Flower", cursive;
+		font-family: $btnsFont;
 		font-size: 15px;
 		text-transform: uppercase;
 		@include btnsStyles;

@@ -1,4 +1,5 @@
 @import "colors";
+@import "variables";
 
 @mixin inputBox {
 	display: grid;
@@ -12,7 +13,7 @@
 		margin-right: 5px;
 		align-self: flex-end;
 		color: $labelClr;
-		font-family: "Indie Flower", cursive;
+		font-family: $primaryFont;
 	}
 	&__input {
 		grid-column: 2/4;
