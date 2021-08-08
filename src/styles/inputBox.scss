@@ -24,6 +24,8 @@
 		outline: none;
 		border-width: 2px;
 		border-color: black;
+		font-family: $secondaryFont;
+		font-style: italic;
 		&:focus {
 			border: solid $fourthClr;
 		}
@@ -31,6 +33,7 @@
 	&__taskErr {
 		grid-column: 1/4;
 		justify-self: center;
+		font-family: $secondaryFont;
 		font-style: italic;
 		color: $fourthClr;
 	}

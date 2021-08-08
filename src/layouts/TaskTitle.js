@@ -2,9 +2,11 @@ const TaskTitle = ({
 	taskHeader,
 	change,
 	taskHeaderError,
+	taskHeaderMessage,
 	inputsBoxClassName,
 }) => {
 	const taskTitleClassName = `${inputsBoxClassName}__taskTitle`;
+	const message = `${taskHeaderMessage}`;
 	return (
 		<div className={taskTitleClassName}>
 			<label
@@ -22,7 +24,7 @@ const TaskTitle = ({
 				onChange={change}
 			/>
 			<span className={`${taskTitleClassName}__taskErr`}>
-				{taskHeaderError ? "Title error" : null}
+				{taskHeaderError ? message : null}
 			</span>
 		</div>
 	);

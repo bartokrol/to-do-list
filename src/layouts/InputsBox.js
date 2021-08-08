@@ -28,12 +28,14 @@ const InputsBox = ({
 				taskHeader={inputs.taskHeader}
 				change={change}
 				taskHeaderError={errors.taskHeaderError}
+				taskHeaderMessage={errors.taskHeaderMessage}
 				inputsBoxClassName={inputsBoxClassName}
 			/>
 			<TaskDesc
 				taskDesc={inputs.taskDesc}
 				change={change}
 				taskDescError={errors.taskDescError}
+				taskDescMessage={errors.taskDescMessage}
 				inputsBoxClassName={inputsBoxClassName}
 			/>
 			{addEditBtn}

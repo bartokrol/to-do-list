@@ -12,7 +12,9 @@ function ToDoList() {
 
 	const [errors, setError] = useState({
 		taskHeaderError: false,
+		taskHeaderMessage: "",
 		taskDescError: false,
+		taskDescMessage: "",
 	});
 
 	const [tasks, setTasks] = useState([
@@ -44,18 +46,26 @@ function ToDoList() {
 
 	const handleTaskSubmit = () => {
 		const { taskHeader, taskDesc } = inputs;
-		let { taskHeaderError, taskDescError } = errors;
+		let {
+			taskHeaderError,
+			taskDescError,
+			taskHeaderMessage,
+			taskDescMessage,
+		} = errors;
 		const taskArr = tasks;
 		const taskNumber = tasks.length;
 		const taskVisible = true;
 		const taskCompleted = false;
 
-		[taskHeaderError, taskDescError] = checkInputsForErrors(
-			taskHeader,
-			taskDesc,
-			taskHeaderError,
-			taskDescError
-		);
+		[taskHeaderError, taskDescError, taskHeaderMessage, taskDescMessage] =
+			checkInputsForErrors(
+				taskHeader,
+				taskDesc,
+				taskHeaderError,
+				taskDescError,
+				taskHeaderMessage,
+				taskDescMessage
+			);
 
 		if (taskHeader.length > 2 && taskDesc.length > 10) {
 			taskArr.push({
@@ -75,6 +85,8 @@ function ToDoList() {
 		setError({
 			taskHeaderError,
 			taskDescError,
+			taskHeaderMessage,
+			taskDescMessage,
 		});
 	};
 
@@ -158,39 +170,60 @@ function ToDoList() {
 		taskHeader,
 		taskDesc,
 		taskHeaderError,
-		taskDescError
+		taskDescError,
+		taskHeaderMessage,
+		taskDescMessage
 	) => {
 		if (taskHeader.length < 3) {
 			taskHeaderError = true;
+			taskHeaderMessage = "Title has to be longer than 3 signs.";
 		} else {
 			taskHeaderError = false;
+			taskHeaderMessage = "";
 		}
 
 		if (taskDesc.length < 11) {
 			taskDescError = true;
+			taskDescMessage = "Description has to be longer than 10 signs.";
 		} else {
 			taskDescError = false;
+			taskDescMessage = "";
 		}
 
-		return [taskHeaderError, taskDescError];
+		return [
+			taskHeaderError,
+			taskDescError,
+			taskHeaderMessage,
+			taskDescMessage,
+		];
 	};
 
 	const handleTaskEditInsideInputsBox = () => {
 		const taskToEdit = editedTask.editedTask;
 		const taskHeader = inputs.taskHeader;
 		const taskDesc = inputs.taskDesc;
-		let { taskHeaderError, taskDescError } = errors;
-
-		[taskHeaderError, taskDescError] = checkInputsForErrors(
-			taskHeader,
-			taskDesc,
+		let {
 			taskHeaderError,
-			taskDescError
-		);
+			taskDescError,
+			taskHeaderMessage,
+			taskDescMessage,
+		} = errors;
+
+		[taskHeaderError, taskDescError, taskHeaderMessage, taskDescMessage] =
+			checkInputsForErrors(
+				taskHeader,
+				taskDesc,
+				taskHeaderError,
+				taskDescError,
+				taskHeaderMessage,
+				taskDescMessage
+			);
 
 		setError({
 			taskHeaderError,
 			taskDescError,
+			taskHeaderMessage,
+			taskDescMessage,
 		});
 
 		if (!taskHeaderError && !taskDescError) {

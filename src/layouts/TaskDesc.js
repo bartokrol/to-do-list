@@ -1,5 +1,12 @@
-const TaskDesc = ({ taskDesc, change, taskDescError, inputsBoxClassName }) => {
+const TaskDesc = ({
+	taskDesc,
+	change,
+	taskDescError,
+	taskDescMessage,
+	inputsBoxClassName,
+}) => {
 	const taskDescClassName = `${inputsBoxClassName}__taskDesc`;
+	const message = `${taskDescMessage}`;
 	return (
 		<div className={taskDescClassName}>
 			<label className={`${taskDescClassName}__label`} htmlFor="taskDesc">
@@ -14,7 +21,7 @@ const TaskDesc = ({ taskDesc, change, taskDescError, inputsBoxClassName }) => {
 				onChange={change}
 			/>
 			<span className={`${taskDescClassName}__taskErr`}>
-				{taskDescError ? "Desc error" : null}
+				{taskDescError ? message : null}
 			</span>
 		</div>
 	);
