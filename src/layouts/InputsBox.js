@@ -22,6 +22,7 @@ const InputsBox = ({
 		</button>
 	);
 	const addEditBtn = isTaskEdited ? editBtn : addBtn;
+	const editClass = isTaskEdited ? "edited" : null;
 	return (
 		<div className={inputsBoxClassName}>
 			<TaskTitle
@@ -30,6 +31,8 @@ const InputsBox = ({
 				taskHeaderError={errors.taskHeaderError}
 				taskHeaderMessage={errors.taskHeaderMessage}
 				inputsBoxClassName={inputsBoxClassName}
+				isTaskEdited={isTaskEdited}
+				editedClass={editClass}
 			/>
 			<TaskDesc
 				taskDesc={inputs.taskDesc}
@@ -37,6 +40,8 @@ const InputsBox = ({
 				taskDescError={errors.taskDescError}
 				taskDescMessage={errors.taskDescMessage}
 				inputsBoxClassName={inputsBoxClassName}
+				isTaskEdited={isTaskEdited}
+				editedClass={editClass}
 			/>
 			{addEditBtn}
 		</div>

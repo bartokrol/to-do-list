@@ -4,9 +4,12 @@ const TaskDesc = ({
 	taskDescError,
 	taskDescMessage,
 	inputsBoxClassName,
+	isTaskEdited,
+	editedClass,
 }) => {
 	const taskDescClassName = `${inputsBoxClassName}__taskDesc`;
 	const message = `${taskDescMessage}`;
+	const editClass = isTaskEdited ? `${editedClass}` : null;
 	return (
 		<div className={taskDescClassName}>
 			<label className={`${taskDescClassName}__label`} htmlFor="taskDesc">
@@ -15,7 +18,7 @@ const TaskDesc = ({
 			<textarea
 				id="taskDesc"
 				type="text"
-				className={`${taskDescClassName}__input`}
+				className={`${taskDescClassName}__input ${editClass}`}
 				name="taskDesc"
 				value={taskDesc}
 				onChange={change}

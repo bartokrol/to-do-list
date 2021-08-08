@@ -4,9 +4,12 @@ const TaskTitle = ({
 	taskHeaderError,
 	taskHeaderMessage,
 	inputsBoxClassName,
+	isTaskEdited,
+	editedClass,
 }) => {
 	const taskTitleClassName = `${inputsBoxClassName}__taskTitle`;
 	const message = `${taskHeaderMessage}`;
+	const editClass = isTaskEdited ? `${editedClass}` : null;
 	return (
 		<div className={taskTitleClassName}>
 			<label
@@ -18,7 +21,7 @@ const TaskTitle = ({
 			<input
 				id="taskTitle"
 				type="text"
-				className={`${taskTitleClassName}__input`}
+				className={`${taskTitleClassName}__input ${editClass}`}
 				name="taskHeader"
 				value={taskHeader}
 				onChange={change}
