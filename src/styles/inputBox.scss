@@ -21,13 +21,20 @@
 		max-height: 50px;
 		resize: none;
 		border-radius: 5px;
+		padding: 5px;
 		outline: none;
-		border-width: 2px;
-		border-color: black;
+		border: none;
 		font-family: $secondaryFont;
 		font-style: italic;
+		background-color: $inputBackgroundClr;
+		color: $inputFontClr;
 		&:focus {
-			border: solid $fourthClr;
+			opacity: 0.7;
+		}
+		&.edited {
+			border: none;
+			background-color: $inputFontClr;
+			color: $inputBackgroundClr;
 		}
 	}
 	&__taskErr {
