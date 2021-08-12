@@ -3,6 +3,10 @@
 @import "inputsBox";
 @import "tasks";
 
+html {
+	background-color: $secondClr;
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -12,4 +16,11 @@
 .toDoList {
 	@include inputsBox;
 	@include tasks;
+}
+
+@media (min-width: 541px) {
+	.toDoList {
+		width: 540px;
+		margin: 0 auto;
+	}
 }

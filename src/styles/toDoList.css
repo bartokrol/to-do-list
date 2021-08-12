@@ -13,6 +13,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital@0;1&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap");
+html {
+  background-color: #dbe2ef;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -198,6 +202,7 @@
   font-size: 40px;
   text-align: center;
   text-transform: uppercase;
+  border-bottom: 3px solid #3f72af;
 }
 
 .toDoList__tasks__task {
@@ -232,7 +237,8 @@
 }
 
 .toDoList__tasks__task__taskText__desc {
-  padding: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
   font-size: calc(30px / 1.7);
   font-family: "Lato", sans-serif;
   font-style: italic;
@@ -347,6 +353,7 @@
   overflow: hidden;
   background-color: #dbe2ef;
   border-bottom: 3px solid #3f72af;
+  padding-bottom: 10px;
 }
 
 .toDoList__tasks__completedTask__taskText__header {
@@ -357,7 +364,8 @@
 }
 
 .toDoList__tasks__completedTask__taskText__desc {
-  padding: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
   font-size: calc(30px / 1.7);
   font-family: "Lato", sans-serif;
   font-style: italic;
@@ -392,5 +400,12 @@
   max-height: calc(200px / 3);
   -webkit-transition: max-height 0.3s ease-in-out;
   transition: max-height 0.3s ease-in-out;
+}
+
+@media (min-width: 541px) {
+  .toDoList {
+    width: 540px;
+    margin: 0 auto;
+  }
 }
 /*# sourceMappingURL=toDoList.css.map */

@@ -23,7 +23,8 @@
 			color: $taskHeaderClr;
 		}
 		&__desc {
-			padding: $basicPadding;
+			padding-left: $basicPadding;
+			padding-right: $basicPadding;
 			font-size: $secondaryTaskFontSize;
 			font-family: $secondaryFont;
 			font-style: italic;
