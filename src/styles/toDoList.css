@@ -31,7 +31,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: #f9f7f7;
+  background-color: #dbe2ef;
   padding: 10px;
   border-bottom: 3px solid #3f72af;
 }
@@ -68,9 +68,9 @@
   max-height: 50px;
   resize: none;
   border-radius: 5px;
+  padding: 5px;
   outline: none;
-  border-width: 2px;
-  border-color: black;
+  border: none;
   font-family: "Lato", sans-serif;
   font-style: italic;
   background-color: #f9f7f7;
@@ -78,13 +78,13 @@
 }
 
 .toDoList__inputsBox__taskTitle__input:focus {
-  border: solid #112d4e;
+  opacity: 0.7;
 }
 
 .toDoList__inputsBox__taskTitle__input.edited {
   border: none;
-  background-color: black;
-  color: blanchedalmond;
+  background-color: #3f72af;
+  color: #f9f7f7;
 }
 
 .toDoList__inputsBox__taskTitle__taskErr {
@@ -130,9 +130,9 @@
   max-height: 50px;
   resize: none;
   border-radius: 5px;
+  padding: 5px;
   outline: none;
-  border-width: 2px;
-  border-color: black;
+  border: none;
   font-family: "Lato", sans-serif;
   font-style: italic;
   background-color: #f9f7f7;
@@ -140,13 +140,13 @@
 }
 
 .toDoList__inputsBox__taskDesc__input:focus {
-  border: solid #112d4e;
+  opacity: 0.7;
 }
 
 .toDoList__inputsBox__taskDesc__input.edited {
   border: none;
-  background-color: black;
-  color: blanchedalmond;
+  background-color: #3f72af;
+  color: #f9f7f7;
 }
 
 .toDoList__inputsBox__taskDesc__taskErr {
@@ -216,7 +216,7 @@
   padding-right: 10px;
   padding-left: 10px;
   word-wrap: break-word;
-  max-height: 250px;
+  max-height: 200px;
   -webkit-transition: max-height 0.3s ease-in-out;
   transition: max-height 0.3s ease-in-out;
   overflow: hidden;
@@ -227,7 +227,7 @@
 .toDoList__tasks__task__taskText__header {
   font-size: 30px;
   font-family: "Alfa Slab One", cursive;
-  line-height: calc(250px / 3);
+  line-height: calc(200px / 3);
   color: #112d4e;
 }
 
@@ -243,7 +243,7 @@
   position: absolute;
   top: 10px;
   right: 10px;
-  height: calc(calc(250px / 3) - 2 * 10px);
+  height: calc(calc(200px / 3) - 2 * 10px);
   width: 70px;
   font-family: "Noto Serif", serif;
   font-size: 15px;
@@ -264,7 +264,7 @@
 }
 
 .toDoList__tasks__task.closed {
-  max-height: calc(250px / 3);
+  max-height: calc(200px / 3);
   -webkit-transition: max-height 0.3s ease-in-out;
   transition: max-height 0.3s ease-in-out;
 }
@@ -341,7 +341,7 @@
   padding-right: 10px;
   padding-left: 10px;
   word-wrap: break-word;
-  max-height: 250px;
+  max-height: 200px;
   -webkit-transition: max-height 0.3s ease-in-out;
   transition: max-height 0.3s ease-in-out;
   overflow: hidden;
@@ -352,7 +352,7 @@
 .toDoList__tasks__completedTask__taskText__header {
   font-size: 30px;
   font-family: "Alfa Slab One", cursive;
-  line-height: calc(250px / 3);
+  line-height: calc(200px / 3);
   color: #112d4e;
 }
 
@@ -368,7 +368,7 @@
   position: absolute;
   top: 10px;
   right: 10px;
-  height: calc(calc(250px / 3) - 2 * 10px);
+  height: calc(calc(200px / 3) - 2 * 10px);
   width: 70px;
   font-family: "Noto Serif", serif;
   font-size: 15px;
@@ -389,7 +389,7 @@
 }
 
 .toDoList__tasks__completedTask.closed {
-  max-height: calc(250px / 3);
+  max-height: calc(200px / 3);
   -webkit-transition: max-height 0.3s ease-in-out;
   transition: max-height 0.3s ease-in-out;
 }

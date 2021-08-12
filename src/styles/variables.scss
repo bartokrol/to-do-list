@@ -8,7 +8,7 @@ $secondaryFont: "Lato", sans-serif;
 
 //tasks variables
 $basicPadding: 10px;
-$openedTaskHeight: 250px;
+$openedTaskHeight: 200px;
 $closedTaskHeight: calc(#{$openedTaskHeight} / 3);
 $taskHeightTransition: max-height 0.3s ease-in-out;
 
