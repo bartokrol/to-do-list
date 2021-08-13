@@ -36,10 +36,13 @@ When new task is created, it's added into "Tasks" section with open description 
 
 ![](src/styles/images/Task.png)
 
-Button in the top-right corner switches task's height. When hidden, only the button and "tashHeader" is shown. 
+Button in the top-right corner switches task's height. When hidden, only the button and "tashHeader" is shown.
 
-Three button in the bottom-right corner are (from the left to right) "Task Confirm", "Task Edit" and "Task Delete". 
+Three button in the bottom-right corner are (from the left to right) "Task Confirm", "Task Edit" and "Task Delete".
 
-"Task Confirm" confirmed that task is completed and remove it from "Tasks" section into "Tasks Done". 
-"Task Edit" get's the task title and description and put it into specific inputs inside "Inputs" section. The background color of the inputs is changed for the user to notice the place where the task is going to be edit. 
-"Task Delete" deletes the task from the arrays. 
+"Task Confirm" confirmed that task is completed and remove it from "Tasks" section into "Tasks Done".
+"Task Edit" get's the task title and description and put it into specific inputs inside "Inputs" section. The background color of the inputs is changed for the user to notice the place where the task is going to be edit. Also the previously "ADD" button changes into "EDIT" button. 
+
+![](src/styles/images/TaskEdit.png)
+
+"Task Delete" deletes the task from the arrays.
