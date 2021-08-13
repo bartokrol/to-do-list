@@ -46,3 +46,8 @@ Three button in the bottom-right corner are (from the left to right) "Task Confi
 ![](src/styles/images/TaskEdit.png)
 
 "Task Delete" deletes the task from the arrays.
+
+## ToDo List Task inside Tasks Done
+
+After task is completed and moved into "Tasks Done" section, the button in the top-right corner is still fully functional. 
+The task can't be moved back into "Tasks" section and also can't be edited or deleted. 
