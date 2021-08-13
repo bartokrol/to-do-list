@@ -17,16 +17,7 @@ function ToDoList() {
 		taskDescMessage: "",
 	});
 
-	const [tasks, setTasks] = useState([
-		{
-			taskHeader: "Bartosz",
-			taskDesc:
-				"KrólKrólKrólKrólKrólKrólKrólKrólKrólKrólKrólKrólKrólKrólKrólKról",
-			taskNumber: 0,
-			taskVisible: true,
-			taskCompleted: false,
-		},
-	]);
+	const [tasks, setTasks] = useState([]);
 
 	const [editedTask, setEditedTask] = useState({
 		isTaskEdited: false,
